@@ -1,0 +1,31 @@
+14:39:45 **** Incremental Build of configuration Debug for project vectorAdd ****
+make all 
+Building file: ../vectorAdd.cu
+Invoking: NVCC Compiler
+/software/cuda-10.2/bin/nvcc -G -g -O0 -gencode arch=compute_60,code=sm_60 -m64 -odir "." -M -o "vectorAdd.d" "../vectorAdd.cu"
+/software/cuda-10.2/bin/nvcc -G -g -O0 --compile --relocatable-device-code=false -gencode arch=compute_60,code=compute_60 -gencode arch=compute_60,code=sm_60 -m64  -x cu -o  "vectorAdd.o" "../vectorAdd.cu"
+../vectorAdd.cu(11): error: namespace "std" has no member "begin"
+
+../vectorAdd.cu(14): error: namespace "std" has no member "end"
+
+../vectorAdd.cu(40): error: identifier "constexpr" is undefined
+
+../vectorAdd.cu(40): error: expected a ";"
+
+../vectorAdd.cu(41): error: identifier "N" is undefined
+
+../vectorAdd.cu(49): error: identifier "begin" is undefined
+
+../vectorAdd.cu(49): error: identifier "end" is undefined
+
+../vectorAdd.cu(49): warning: lambda expressions are a C++11 feature
+
+../vectorAdd.cu(49): error: a template argument may not reference a local type
+
+../vectorAdd.cu(50): error: a template argument may not reference a local type
+
+9 errors detected in the compilation of "/tmp/tmpxft_000291a1_00000000-6_vectorAdd.cpp1.ii".
+make: *** [vectorAdd.o] Error 1
+
+14:39:47 Build Finished (took 1s.598ms)
+

@@ -1,5 +1,5 @@
-//---------- a.cu ----------
 
+//
 
 #include <stdio.h>
 #include "b.h"
@@ -12,18 +12,18 @@ __global__ void foo (void) {
   __syncthreads();
 
   g[threadIdx.x] = a[blockDim.x - threadIdx.x - 1];
-
   bar();
 }
 
+
+//
 int main (void) {
   unsigned int i;
   int *dg, hg[N];
   int sum = 0;
 
-  foo<<<1, N>>>();
+  foo<<<1,N>>>();
 
-  // 
   if(cudaGetSymbolAddress((void**)&dg, g)){
       printf("couldn't get the symbol addr\n");
       return 1;
@@ -46,3 +46,4 @@ int main (void) {
 
   return 0;
 }
+

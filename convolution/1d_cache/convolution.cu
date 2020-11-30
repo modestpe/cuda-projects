@@ -1,7 +1,7 @@
+
 // This program implements a 1D convolution using CUDA,
 // and stores the mask in constant memory. It loads the
 // primary array into shared memory, but not halo elements.
-// By: Nick from CoffeeBeforeArch
 
 #include <cassert>
 #include <cstdlib>
@@ -20,6 +20,7 @@ __constant__ int mask[MASK_LENGTH];
 //      array   = padded array
 //      result  = result array
 //      n       = number of elements in array
+
 __global__ void convolution_1d(int *array, int *result, int n) {
   // Global thread ID calculation
   int tid = blockIdx.x * blockDim.x + threadIdx.x;
